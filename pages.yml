@@ -1,0 +1,409 @@
+media:
+  input: public/images
+  output: /images
+  categories: [image]
+  rename: safe
+
+components:
+  link:
+    type: object
+    fields:
+      - name: label
+        label: Link text
+        type: string
+        required: true
+      - name: href
+        label: Destination URL
+        type: string
+        description: Use a full URL or an on-page anchor such as #shop.
+
+  product:
+    type: object
+    fields:
+      - name: name
+        label: Product name
+        type: string
+        required: true
+      - name: subtitle
+        label: Subtitle
+        type: string
+      - name: image
+        label: Product image
+        type: image
+        required: true
+      - name: imageAlt
+        label: Image description
+        type: string
+        required: true
+      - name: href
+        label: Etsy URL
+        type: string
+        required: true
+
+  article:
+    type: object
+    fields:
+      - name: meta
+        label: Date and reading time
+        type: string
+      - name: title
+        label: Article title
+        type: string
+        required: true
+      - name: summary
+        label: Summary
+        type: text
+        required: true
+      - name: linkLabel
+        label: Link text
+        type: string
+        required: true
+      - name: href
+        label: Article URL
+        type: string
+        description: Leave blank until the article has a verified destination.
+      - name: image
+        label: Article image
+        type: image
+        required: true
+      - name: imageAlt
+        label: Image description
+        type: string
+        required: true
+
+  social:
+    type: object
+    fields:
+      - name: label
+        label: Platform name
+        type: string
+        required: true
+      - name: key
+        label: Platform key
+        type: select
+        required: true
+        options:
+          values:
+            - name: instagram
+              label: Instagram
+            - name: tiktok
+              label: TikTok
+            - name: youtube
+              label: YouTube
+            - name: facebook
+              label: Facebook
+            - name: pinterest
+              label: Pinterest
+      - name: href
+        label: Profile URL
+        type: string
+        description: Leave blank until the profile URL is verified.
+
+  followCard:
+    type: object
+    fields:
+      - name: key
+        label: Platform key
+        type: select
+        required: true
+        options:
+          values:
+            - name: instagram
+              label: Instagram
+            - name: tiktok
+              label: TikTok
+            - name: youtube
+              label: YouTube
+            - name: facebook
+              label: Facebook
+            - name: pinterest
+              label: Pinterest
+      - name: label
+        label: Platform name
+        type: string
+        required: true
+      - name: body
+        label: Description
+        type: string
+      - name: cta
+        label: Call to action
+        type: string
+      - name: href
+        label: Profile URL
+        type: string
+
+content:
+  - name: homepage
+    label: Homepage content
+    type: file
+    path: src/content/site.json
+    format: json
+    operations:
+      create: false
+      rename: false
+      delete: false
+    fields:
+      - name: site
+        label: Site settings
+        type: object
+        fields:
+          - name: name
+            label: Site name
+            type: string
+            required: true
+          - name: description
+            label: Search and sharing description
+            type: text
+            required: true
+          - name: copyright
+            label: Copyright name
+            type: string
+            required: true
+
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - name: eyebrow
+            label: Small heading
+            type: string
+          - name: headline
+            label: Headline
+            type: string
+            required: true
+          - name: accent
+            label: Orange italic line
+            type: string
+            required: true
+          - name: body
+            label: Introduction
+            type: text
+            required: true
+          - name: primaryCta
+            label: Primary button
+            component: link
+          - name: secondaryCta
+            label: Secondary button
+            component: link
+          - name: image
+            label: Hero image
+            type: image
+            required: true
+          - name: imageAlt
+            label: Hero image description
+            type: string
+            required: true
+          - name: imageNote
+            label: Internal image note
+            type: text
+          - name: aside
+            label: Image-side statement
+            type: string
+
+      - name: freedomStudies
+        label: Freedom Studies feature
+        type: object
+        fields:
+          - name: seriesLabel
+            label: Series label
+            type: string
+          - name: seriesTitle
+            label: Series title
+            type: string
+            required: true
+          - name: seriesBody
+            label: Series introduction
+            type: text
+          - name: seriesCta
+            label: Series button
+            component: link
+          - name: episodeLabel
+            label: Episode label
+            type: string
+          - name: episodeTitle
+            label: Episode title
+            type: string
+            required: true
+          - name: episodeSubtitle
+            label: Episode subtitle
+            type: string
+          - name: episodeBody
+            label: Episode description
+            type: text
+          - name: episodeCta
+            label: Episode link
+            component: link
+          - name: quote
+            label: Pull quote
+            type: text
+          - name: quoteAuthor
+            label: Quote attribution
+            type: string
+          - name: image
+            label: Feature image
+            type: image
+            required: true
+          - name: imageAlt
+            label: Feature image description
+            type: string
+            required: true
+
+      - name: shop
+        label: Shop section
+        type: object
+        fields:
+          - name: title
+            label: Heading
+            type: string
+            required: true
+          - name: intro
+            label: Introduction
+            type: text
+          - name: shopLink
+            label: Main shop button
+            component: link
+          - name: note
+            label: Small note
+            type: string
+          - name: products
+            label: Featured products
+            component: product
+            list:
+              min: 1
+              max: 4
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+
+      - name: featuredResource
+        label: Featured teaching resource
+        type: object
+        fields:
+          - name: label
+            label: Small heading
+            type: string
+          - name: title
+            label: Resource heading
+            type: string
+            required: true
+          - name: body
+            label: Description
+            type: text
+          - name: image
+            label: Resource image
+            type: image
+            required: true
+          - name: imageAlt
+            label: Image description
+            type: string
+            required: true
+          - name: points
+            label: What is included
+            type: string
+            list:
+              min: 1
+              max: 8
+          - name: cta
+            label: Download button
+            component: link
+          - name: quote
+            label: Side quote
+            type: text
+
+      - name: articles
+        label: Written archive
+        type: object
+        fields:
+          - name: label
+            label: Small heading
+            type: string
+          - name: title
+            label: Section heading
+            type: string
+            required: true
+          - name: intro
+            label: Section introduction
+            type: text
+          - name: archiveLink
+            label: Archive link
+            component: link
+          - name: items
+            label: Featured articles
+            component: article
+            list:
+              min: 1
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+
+      - name: follow
+        label: Follow section
+        type: object
+        fields:
+          - name: title
+            label: Heading
+            type: string
+            required: true
+          - name: body
+            label: Introduction
+            type: text
+          - name: items
+            label: Platform cards
+            component: followCard
+            list:
+              min: 1
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+
+      - name: support
+        label: Support section
+        type: object
+        fields:
+          - name: title
+            label: Heading
+            type: string
+            required: true
+          - name: body
+            label: Description
+            type: text
+          - name: cta
+            label: Support button
+            component: link
+          - name: image
+            label: Support image
+            type: image
+            required: true
+          - name: imageAlt
+            label: Image description
+            type: string
+            required: true
+          - name: aside
+            label: Side note
+            type: text
+          - name: thanks
+            label: Closing line
+            type: string
+
+      - name: socials
+        label: Header and footer social links
+        component: social
+        list:
+          min: 1
+          max: 6
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      update: "content: update {path} via Pages CMS"
+      create: "content: create {path} via Pages CMS"
+      delete: "content: delete {path} via Pages CMS"
+      rename: "content: rename {oldPath} to {newPath} via Pages CMS"
