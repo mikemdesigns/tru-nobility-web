@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">About image placeholder</title><desc id="desc">Replace with a founder, family, studio, or behind-the-scenes photograph.</desc>
+  <rect width="800" height="1000" fill="#5d653a"/><rect x="90" y="90" width="620" height="820" fill="none" stroke="#f2ebdd" stroke-opacity=".65"/>
+  <path d="M90 650L330 410l150 150 230-230v580H90z" fill="#d8c7aa" opacity=".35"/>
+  <text x="400" y="720" text-anchor="middle" fill="#fbf8f1" font-family="Georgia,serif" font-size="32">Founder / studio photograph</text>
+  <text x="400" y="765" text-anchor="middle" fill="#fbf8f1" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="3">IMAGE PLACEHOLDER</text>
+</svg>

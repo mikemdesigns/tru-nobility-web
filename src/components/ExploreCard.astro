@@ -1,0 +1,32 @@
+---
+interface Props {
+  item: {
+    id: string;
+    label: string;
+    title: string;
+    body: string;
+    linkLabel: string;
+    href: string;
+    image: string;
+    imageAlt: string;
+  };
+}
+const { item } = Astro.props;
+---
+
+<article id={item.id} class:list={["explore-card", `explore-card--${item.id}`]}>
+  <div class="explore-card__image">
+    <img src={item.image} alt={item.imageAlt} loading="lazy" />
+    {item.id === "watch" && <span class="play-button" aria-hidden="true">▶</span>}
+  </div>
+  <div class="explore-card__copy">
+    <p class="section-label">{item.label}</p>
+    <h3>{item.title}</h3>
+    <p>{item.body}</p>
+    {item.href ? (
+      <a class="editorial-link" href={item.href} target="_blank" rel="noreferrer">{item.linkLabel} <span aria-hidden="true">→</span></a>
+    ) : (
+      <span class="editorial-link editorial-link--pending" title="Add this verified URL in src/content/site.json">{item.linkLabel} <span aria-hidden="true">→</span></span>
+    )}
+  </div>
+</article>

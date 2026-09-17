@@ -1,0 +1,56 @@
+---
+interface ShelfItem {
+  number: string;
+  title: string;
+  meta: string;
+  summary: string;
+  linkLabel: string;
+  href: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+interface Shelf {
+  id: string;
+  kicker: string;
+  title: string;
+  description: string;
+  variant: "essays" | "classroom";
+  items: ShelfItem[];
+}
+
+interface Props {
+  shelf: Shelf;
+}
+
+const { shelf } = Astro.props;
+---
+
+<section id={shelf.id} class:list={["resource-shelf", `resource-shelf--${shelf.variant}`]} aria-labelledby={`${shelf.id}-title`}>
+  <div class="resource-shelf__intro">
+    <p class="section-label">{shelf.kicker}</p>
+    <h2 id={`${shelf.id}-title`}>{shelf.title}</h2>
+    <p>{shelf.description}</p>
+  </div>
+
+  <div class="resource-shelf__items">
+    {shelf.items.map((item) => (
+      <article class="resource-entry">
+        {item.image && (
+          <a class="resource-entry__image" href={item.href} target="_blank" rel="noreferrer" tabindex="-1" aria-hidden="true">
+            <img src={item.image} alt={item.imageAlt || ""} loading="lazy" />
+          </a>
+        )}
+        <div class="resource-entry__copy">
+          <div class="resource-entry__topline">
+            <span>{item.number}</span>
+            <p>{item.meta}</p>
+          </div>
+          <h3><a href={item.href} target="_blank" rel="noreferrer">{item.title}</a></h3>
+          <p>{item.summary}</p>
+          <a class="editorial-link" href={item.href} target="_blank" rel="noreferrer">{item.linkLabel} <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

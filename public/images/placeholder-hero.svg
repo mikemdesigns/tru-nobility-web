@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Hero image placeholder</title><desc id="desc">Replace with final Tru Nobility hero photography.</desc>
+  <rect width="800" height="1000" fill="#d8c7aa"/><path d="M0 0h800L0 1000z" fill="#a34f32" opacity=".12"/><path d="M800 0v1000H0z" fill="#5d653a" opacity=".1"/>
+  <rect x="48" y="48" width="704" height="904" fill="none" stroke="#211f1b" stroke-opacity=".45"/>
+  <text x="400" y="470" text-anchor="middle" fill="#211f1b" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4">IMAGE PLACEHOLDER</text>
+  <text x="400" y="510" text-anchor="middle" fill="#211f1b" font-family="Georgia,serif" font-size="30">Hero / founder photograph</text>
+  <text x="400" y="550" text-anchor="middle" fill="#211f1b" font-family="Arial,sans-serif" font-size="14" letter-spacing="2">REPLACE IN PUBLIC / IMAGES</text>
+</svg>

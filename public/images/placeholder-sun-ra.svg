@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Sun Ra feature placeholder</title><desc id="desc">Replace with the final Sun Ra editorial image or video still.</desc>
+  <rect width="1000" height="1200" fill="#5e402b"/><circle cx="500" cy="455" r="270" fill="none" stroke="#b8873c" stroke-width="2" opacity=".65"/><circle cx="500" cy="455" r="185" fill="none" stroke="#a34f32" stroke-width="34" opacity=".5"/>
+  <path d="M100 980h800" stroke="#d8c7aa" stroke-width="2" opacity=".55"/>
+  <text x="500" y="550" text-anchor="middle" fill="#fbf8f1" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="5">RIGHT NOW · FREEDOM STUDIES</text>
+  <text x="500" y="1018" text-anchor="middle" fill="#fbf8f1" font-family="Georgia,serif" font-size="38">Sun Ra image / video still</text>
+  <text x="500" y="1060" text-anchor="middle" fill="#d8c7aa" font-family="Arial,sans-serif" font-size="15" letter-spacing="3">PLACEHOLDER · REPLACE LATER</text>
+</svg>

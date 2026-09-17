@@ -1,0 +1,36 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+
+interface Social { label: string; key: string; href: string; }
+interface Link { label: string; href: string; }
+interface Props {
+  navigation: Link[];
+  socials: Social[];
+  copyright: string;
+  tagline: string;
+  links: Link[];
+}
+const { navigation, socials, copyright, tagline, links } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="shell site-footer__top">
+    <a class="footer-brand" href="#top" aria-label="Tru Nobility home">
+      <img src="/brand/tru-nobility-editorial-nameplate.svg" alt="Tru Nobility" />
+      <span>Wear the Legacy. Teach the Lesson.</span>
+    </a>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      {navigation.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+    <div class="footer-social">
+      <SocialLinks socials={socials} compact />
+      <nav class="footer-legal" aria-label="Legal">
+        {links.map((link) => link.href ? <a href={link.href}>{link.label}</a> : <span title={`Add the ${link.label} URL in src/content/site.json`}>{link.label}</span>)}
+      </nav>
+    </div>
+  </div>
+  <div class="shell site-footer__bottom">
+    <p>© 2026 {copyright}. All rights reserved.</p>
+    <p>{tagline}</p>
+  </div>
+</footer>

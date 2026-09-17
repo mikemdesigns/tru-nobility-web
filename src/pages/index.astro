@@ -1,0 +1,219 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import ProductCard from "../components/ProductCard.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+import Footer from "../components/Footer.astro";
+import content from "../content/site.json";
+
+const wayfindingIcons: Record<string, string> = {
+  shirt: "♕",
+  book: "▤",
+  article: "▧",
+  people: "◎"
+};
+---
+
+<BaseLayout title={`${content.site.name} · Wear the Legacy. Teach the Lesson.`} description={content.site.description}>
+  <div id="top" class="site-frame">
+    <Header navigation={content.navigation} socials={content.socials} />
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__photo">
+          <img src={content.hero.image} alt={content.hero.imageAlt} />
+        </div>
+        <div class="shell hero__inner">
+          <div class="hero__copy">
+            <p class="eyebrow">{content.hero.eyebrow}</p>
+            <h1 id="hero-title">{content.hero.headline}</h1>
+            <p class="hero__accent">{content.hero.accent}</p>
+            <p class="hero__body">{content.hero.body}</p>
+            <div class="button-row">
+              <a class="button button--accent" href={content.hero.primaryCta.href}>{content.hero.primaryCta.label} <span aria-hidden="true">→</span></a>
+              <a class="button button--outline-dark" href={content.hero.secondaryCta.href} target="_blank" rel="noreferrer">{content.hero.secondaryCta.label} <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <p class="hero__aside">{content.hero.aside}</p>
+        </div>
+      </section>
+
+      <section id="start-here" class="wayfinding" aria-labelledby="wayfinding-title">
+        <div class="shell">
+          <div class="wayfinding__heading">
+            <h2 id="wayfinding-title">{content.wayfinding.title}</h2>
+            <p>{content.wayfinding.intro}</p>
+          </div>
+          <div class="wayfinding__grid">
+            {content.wayfinding.items.map((item) => (
+              <article class="wayfinding-card">
+                <span class="wayfinding-card__icon" aria-hidden="true">{wayfindingIcons[item.icon]}</span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                {item.href ? (
+                  <a class="editorial-link" href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel={item.href.startsWith("http") ? "noreferrer" : undefined}>{item.linkLabel} <span aria-hidden="true">→</span></a>
+                ) : (
+                  <span class="editorial-link editorial-link--pending" title="Add this destination in src/content/site.json">{item.linkLabel} <span aria-hidden="true">→</span></span>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="watch" class="freedom-feature" aria-labelledby="freedom-title">
+        <div class="shell freedom-feature__grid">
+          <div class="freedom-feature__series">
+            <p class="eyebrow">{content.freedomStudies.seriesLabel}</p>
+            <h2 id="freedom-title">{content.freedomStudies.seriesTitle}</h2>
+            <span class="orange-rule" aria-hidden="true"></span>
+            <p>{content.freedomStudies.seriesBody}</p>
+            <a class="button button--accent" href={content.freedomStudies.seriesCta.href}>{content.freedomStudies.seriesCta.label} <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="freedom-feature__portrait">
+            <img src={content.freedomStudies.image} alt={content.freedomStudies.imageAlt} loading="lazy" />
+          </div>
+          <div class="freedom-feature__episode">
+            <p class="eyebrow">{content.freedomStudies.episodeLabel}</p>
+            <h3>{content.freedomStudies.episodeTitle}</h3>
+            <p class="freedom-feature__subtitle">{content.freedomStudies.episodeSubtitle}</p>
+            <p>{content.freedomStudies.episodeBody}</p>
+            <a class="editorial-link" href={content.freedomStudies.episodeCta.href}>{content.freedomStudies.episodeCta.label} <span aria-hidden="true">→</span></a>
+          </div>
+          <figure class="freedom-feature__quote">
+            <blockquote>“{content.freedomStudies.quote}”</blockquote>
+            <figcaption>— {content.freedomStudies.quoteAuthor}</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="shop" class="shop-section" aria-labelledby="shop-title">
+        <div class="shell shop-section__grid">
+          <div class="shop-section__intro">
+            <h2 id="shop-title">{content.shop.title}</h2>
+            <p>{content.shop.intro}</p>
+            <a class="button button--accent" href={content.shop.shopLink.href} target="_blank" rel="noreferrer">{content.shop.shopLink.label} <span aria-hidden="true">→</span></a>
+            <small>{content.shop.note}</small>
+          </div>
+          <div class="product-grid">
+            {content.shop.products.map((product) => <ProductCard product={product} />)}
+          </div>
+        </div>
+      </section>
+
+      <section id="teach" class="featured-resource" aria-labelledby="resource-title">
+        <div class="shell featured-resource__grid">
+          <div class="featured-resource__visual">
+            <img src={content.featuredResource.image} alt={content.featuredResource.imageAlt} loading="lazy" />
+          </div>
+          <div class="featured-resource__copy">
+            <p class="eyebrow">{content.featuredResource.label}</p>
+            <h2 id="resource-title">{content.featuredResource.title}</h2>
+            <p>{content.featuredResource.body}</p>
+            <ul>
+              {content.featuredResource.points.map((point) => <li>{point}</li>)}
+            </ul>
+            <a class="button button--accent" href={content.featuredResource.cta.href} target="_blank" rel="noreferrer">{content.featuredResource.cta.label} <span aria-hidden="true">→</span></a>
+          </div>
+          <blockquote class="featured-resource__quote">{content.featuredResource.quote}</blockquote>
+        </div>
+      </section>
+
+      <section id="essays" class="articles-section" aria-labelledby="articles-title">
+        <div class="shell articles-section__grid">
+          <div class="articles-section__intro">
+            <p class="eyebrow">{content.articles.label}</p>
+            <h2 id="articles-title">{content.articles.title}</h2>
+            <p>{content.articles.intro}</p>
+            <a class="editorial-link" href={content.articles.archiveLink.href} target="_blank" rel="noreferrer">{content.articles.archiveLink.label} <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="articles-grid">
+            {content.articles.items.map((article) => (
+              <article class="article-card">
+                <div class="article-card__image">
+                  <img src={article.image} alt={article.imageAlt} loading="lazy" />
+                </div>
+                <p class="article-card__meta">{article.meta}</p>
+                <h3>{article.title}</h3>
+                <p>{article.summary}</p>
+                {article.href ? (
+                  <a class="editorial-link" href={article.href} target="_blank" rel="noreferrer">{article.linkLabel} <span aria-hidden="true">→</span></a>
+                ) : (
+                  <span class="editorial-link editorial-link--pending" title="Article URL to be added">{article.linkLabel} <span aria-hidden="true">→</span></span>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="vision-section" aria-labelledby="vision-title">
+        <div class="shell vision-section__grid">
+          <div class="vision-section__intro">
+            <p class="eyebrow">{content.vision.label}</p>
+            <h2 id="vision-title">{content.vision.title}</h2>
+            <p>{content.vision.intro}</p>
+            <a class="editorial-link" href={content.vision.cta.href}>{content.vision.cta.label} <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="vision-grid">
+            {content.vision.items.map((item) => (
+              <article class="vision-card">
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="follow-section" aria-labelledby="follow-title">
+        <div class="shell follow-section__grid">
+          <div class="follow-section__intro">
+            <h2 id="follow-title">{content.follow.title}</h2>
+            <span class="orange-rule" aria-hidden="true"></span>
+            <p>{content.follow.body}</p>
+          </div>
+          <div class="follow-grid">
+            {content.follow.items.map((item) => (
+              <article class="follow-card">
+                <SocialLinks socials={[item]} compact />
+                <h3>{item.label}</h3>
+                <p>{item.body}</p>
+                {item.href ? (
+                  <a class="editorial-link" href={item.href} target="_blank" rel="noreferrer">{item.cta} <span aria-hidden="true">→</span></a>
+                ) : (
+                  <span class="editorial-link editorial-link--pending" title={`Add the ${item.label} URL in src/content/site.json`}>{item.cta} <span aria-hidden="true">→</span></span>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="support-section" aria-labelledby="support-title">
+        <div class="shell support-section__grid">
+          <div class="support-section__image">
+            <img src={content.support.image} alt={content.support.imageAlt} loading="lazy" />
+          </div>
+          <div class="support-section__copy">
+            <h2 id="support-title">{content.support.title}</h2>
+            <p>{content.support.body}</p>
+            {content.support.cta.href ? (
+              <a class="button button--accent" href={content.support.cta.href}>{content.support.cta.label} <span aria-hidden="true">→</span></a>
+            ) : (
+              <span class="button button--accent button--pending" title="Add the support destination in src/content/site.json">{content.support.cta.label} <span aria-hidden="true">→</span></span>
+            )}
+          </div>
+          <div class="support-section__aside">
+            <p>{content.support.aside}</p>
+            <span class="orange-rule" aria-hidden="true"></span>
+            <em>{content.support.thanks}</em>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer navigation={content.navigation} socials={content.socials} copyright={content.site.copyright} tagline={content.footer.tagline} links={content.footer.links} />
+  </div>
+</BaseLayout>
