@@ -303,6 +303,7 @@ content:
             list:
               min: 1
               max: 8
+              collapsible: false
           - name: cta
             label: Download button
             component: link
