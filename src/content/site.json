@@ -35,20 +35,7 @@
     "headline": "History isn’t something we just remember.",
     "accent": "It’s something we study, carry, teach and wear.",
     "body": "Tru Nobility is evolving from a clothing brand into a home for history, culture, art and education. Through clothing, storytelling and free teaching resources, we’re building new ways to explore the people, ideas and movements that still matter.",
-<<<<<<< HEAD
-    "primaryCta": {
-      "label": "Shop the collection on Etsy",
-      "href": "https://www.etsy.com/shop/TruNobility"
-    },
-    "secondaryCta": {
-      "label": "Shop the collection on Etsy",
-      "href": "https://www.etsy.com/shop/TruNobility"
-    },
-    "image": "/images/hero-temporary.jpg",
-    "imageAlt": "Tru Nobility community member in a library wearing a history-inspired shirt",
-=======
     "image": "/images/hero-temporary.jpg", "imageAlt": "Tru Nobility community member in a library wearing a history-inspired shirt",
->>>>>>> d13b665 (feat: Refine styling and add fontawesome)
     "imageNote": "Temporary hero image — replace this path when final homepage photography is supplied.",
     "aside": "Same questions. Bigger possibilities."
   },
@@ -58,40 +45,10 @@
     "primaryCta": { "label": "Explore the new Tru Nobility", "href": "#about" },
     "secondaryCta": { "label": "Shop the collection on Etsy", "href": "https://www.etsy.com/shop/TruNobility" },
     "items": [
-<<<<<<< HEAD
-      {
-        "icon": "shirt",
-        "title": "A shirt or product?",
-        "body": "Our collection is now on Etsy.",
-        "linkLabel": "Shop Tru Nobility",
-        "href": "https://www.etsy.com/shop/TruNobility"
-      },
-      {
-        "icon": "book",
-        "title": "A lesson or resource?",
-        "body": "Find free lesson plans and teaching materials.",
-        "linkLabel": "Go to Share My Lesson"
-      },
-      {
-        "icon": "article",
-        "title": "An article or history post?",
-        "body": "Explore our growing library of original editorial work.",
-        "linkLabel": "Read the latest",
-        "href": "#essays"
-      },
-      {
-        "icon": "people",
-        "title": "Just exploring?",
-        "body": "Learn more about who we are and what we’re building.",
-        "linkLabel": "Start here",
-        "href": "#about"
-      }
-=======
       { "icon": "shirt", "title": "A shirt or product?", "body": "Our clothing collection is now on Etsy.", "linkLabel": "Shop Tru Nobility", "href": "https://www.etsy.com/shop/TruNobility" },
       { "icon": "book", "title": "A lesson or resource?", "body": "Download our free lesson plans and teaching materials.", "linkLabel": "Go to Share My Lesson", "href": "https://sharemylesson.com/users/tru-nobility" },
       { "icon": "article", "title": "An article or history post?", "body": "Explore our growing library of original editorial work.", "linkLabel": "Read the latest", "href": "#essays" },
       { "icon": "people", "title": "Just exploring?", "body": "Learn more about who we are and what we’re building.", "linkLabel": "Start here", "href": "#about" }
->>>>>>> d13b665 (feat: Refine styling and add fontawesome)
     ]
   },
   "freedomStudies": {
@@ -183,37 +140,8 @@
       "href": "https://medium.com/@trunobilityapparel"
     },
     "items": [
-<<<<<<< HEAD
-      {
-        "meta": "Jul 4, 2026 · 10 min read",
-        "title": "What July 4th Feels Like When You Know Too Much",
-        "summary": "A personal examination of national myth, public ritual and what freedom means when the celebration and the history do not agree.",
-        "linkLabel": "Read on Medium",
-        "href": "https://medium.com/@trunobilityapparel/what-july-4th-feels-like-when-you-know-too-much-23dc98415588",
-        "image": "/images/article-july-fourth.png",
-        "imageAlt": "A July Fourth meal arranged over a copy of the Declaration of Independence"
-      },
-      {
-        "meta": "Feb 17, 2026 · 8 min read",
-        "title": "Our Art Used to Be a Language: The Hidden Meaning of African Mudcloth",
-        "summary": "How Bogolanfini carries history through material, symbol and visual proverb—and what it asks of descendants learning to read it.",
-        "linkLabel": "Read on Medium",
-        "href": "https://medium.com/@trunobilityapparel/our-art-used-to-be-a-language-the-hidden-meaning-of-african-mudcloth-0bf3fde7d1d9",
-        "image": "/images/article-mudcloth.png",
-        "imageAlt": "Black, ochre and brown African mudcloth pattern"
-      },
-      {
-        "meta": "Archive · 12 min read",
-        "title": "The Freedom Schools Were Real — and They Worked",
-        "summary": "A look at what the Freedom Schools did, who they served, and the lasting impact of a people who refused to wait.",
-        "linkLabel": "Coming to the archive",
-        "image": "/images/article-freedom-studies-collage.png",
-        "imageAlt": "Collage of Black writers, artists and organizers"
-      }
-=======
       { "meta": "Jul 4, 2026 · 10 min read", "title": "What July 4th Feels Like When You Know Too Much", "summary": "A personal examination of national myth, public ritual and what freedom means when the celebration and the history do not agree.", "linkLabel": "Read on Medium", "href": "https://medium.com/@trunobilityapparel/what-july-4th-feels-like-when-you-know-too-much-23dc98415588", "image": "/images/article-july-fourth.png", "imageAlt": "A July Fourth meal arranged over a copy of the Declaration of Independence" },
       { "meta": "Feb 17, 2026 · 8 min read", "title": "Our Art Used to Be a Language: The Hidden Meaning of African Mudcloth", "summary": "How Bogolanfini carries history through material, symbol and visual proverb—and what it asks of descendants learning to read it.", "linkLabel": "Read on Medium", "href": "https://medium.com/@trunobilityapparel/our-art-used-to-be-a-language-the-hidden-meaning-of-african-mudcloth-0bf3fde7d1d9", "image": "/images/article-mudcloth.png", "imageAlt": "Black, ochre and brown African mudcloth pattern" }
->>>>>>> d13b665 (feat: Refine styling and add fontawesome)
     ]
   },
   "vision": {
@@ -251,47 +179,11 @@
     "title": "Follow the work as it unfolds.",
     "body": "Freedom Studies, new research, behind-the-scenes work, questions, videos, lessons—and the occasional shirt.",
     "items": [
-<<<<<<< HEAD
-      {
-        "key": "instagram",
-        "label": "Instagram",
-        "body": "Visual stories + new work",
-        "cta": "Follow",
-        "href": "https://www.instagram.com/trunobilityapparel"
-      },
-      {
-        "key": "tiktok",
-        "label": "TikTok",
-        "body": "Short lessons + conversation",
-        "cta": "Follow",
-        "href": "https://www.tiktok.com/@trunobility"
-      },
-      {
-        "key": "youtube",
-        "label": "YouTube",
-        "body": "Films + deeper editorial work",
-        "cta": "Subscribe"
-      },
-      {
-        "key": "facebook",
-        "label": "Facebook",
-        "body": "Stories + community discussion",
-        "cta": "Follow",
-        "href": "https://www.facebook.com/trunobilityapparel"
-      },
-      {
-        "key": "pinterest",
-        "label": "Pinterest",
-        "body": "Resources + visual research",
-        "cta": "Follow"
-      }
-=======
       { "key": "instagram", "label": "Instagram", "body": "Visual stories + new work", "cta": "Follow", "href": "https://www.instagram.com/trunobilityapparel" },
       { "key": "tiktok", "label": "TikTok", "body": "Short lessons + conversation", "cta": "Follow", "href": "https://www.tiktok.com/@trunobility" },
       { "key": "youtube", "label": "YouTube", "body": "Films + deeper editorial work", "cta": "Subscribe", "href": "https://www.youtube.com/@TruNobility" },
       { "key": "facebook", "label": "Facebook", "body": "Stories + community discussion", "cta": "Follow", "href": "https://www.facebook.com/trunobilityapparel" },
       { "key": "pinterest", "label": "Pinterest", "body": "Resources + visual research", "cta": "Follow", "href": "https://www.pinterest.com/trunobilityapparel/" }
->>>>>>> d13b665 (feat: Refine styling and add fontawesome)
     ]
   },
   "support": {
@@ -306,37 +198,11 @@
     "thanks": "Thank you."
   },
   "socials": [
-<<<<<<< HEAD
-    {
-      "label": "TikTok",
-      "key": "tiktok",
-      "href": "https://www.tiktok.com/@trunobility"
-    },
-    {
-      "label": "Instagram",
-      "key": "instagram",
-      "href": "https://www.instagram.com/trunobilityapparel"
-    },
-    {
-      "label": "YouTube",
-      "key": "youtube"
-    },
-    {
-      "label": "Facebook",
-      "key": "facebook",
-      "href": "https://www.facebook.com/trunobilityapparel"
-    },
-    {
-      "label": "Pinterest",
-      "key": "pinterest"
-    }
-=======
     { "label": "TikTok", "key": "tiktok", "href": "https://www.tiktok.com/@trunobility" },
     { "label": "Instagram", "key": "instagram", "href": "https://www.instagram.com/trunobilityapparel" },
     { "label": "YouTube", "key": "youtube", "href": "https://www.youtube.com/@TruNobility" },
     { "label": "Facebook", "key": "facebook", "href": "https://www.facebook.com/trunobilityapparel" },
     { "label": "Pinterest", "key": "pinterest", "href": "https://www.pinterest.com/trunobilityapparel/" }
->>>>>>> d13b665 (feat: Refine styling and add fontawesome)
   ],
   "footer": {
     "tagline": "History works better when we do.",
