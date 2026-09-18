@@ -32,8 +32,8 @@ components:
               label: Book
             - name: article
               label: Article
-            - name: people
-              label: People
+            - name: explore
+              label: Explore
       - name: title
         label: Card heading
         type: string
@@ -288,6 +288,14 @@ content:
         label: Freedom Studies feature
         type: object
         fields:
+          - name: backgroundImage
+            label: Space background
+            type: image
+            required: true
+          - name: parallaxEnabled
+            label: Animate background on scroll
+            type: boolean
+            description: Subtle desktop parallax. Automatically disabled on small screens and for reduced-motion preferences.
           - name: seriesLabel
             label: Series label
             type: string

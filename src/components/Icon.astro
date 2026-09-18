@@ -13,13 +13,13 @@ import {
   faYoutube
 } from "@fortawesome/free-brands-svg-icons";
 import {
-  faBookOpen,
+  faBookOpenReader,
+  faCompass,
   faEnvelope,
-  faFileLines,
   faGlobe,
   faLink,
   faMagnifyingGlass,
-  faPeopleGroup,
+  faPenNib,
   faPlay,
   faShirt
 } from "@fortawesome/free-solid-svg-icons";
@@ -48,9 +48,9 @@ const icons: Record<string, IconDefinition> = {
   search: faMagnifyingGlass,
   play: faPlay,
   shirt: faShirt,
-  book: faBookOpen,
-  article: faFileLines,
-  people: faPeopleGroup
+  book: faBookOpenReader,
+  article: faPenNib,
+  explore: faCompass
 };
 
 const icon = icons[name] ?? faLink;

@@ -48,7 +48,7 @@
       { "icon": "shirt", "title": "A shirt or product?", "body": "Our clothing collection is now on Etsy.", "linkLabel": "Shop Tru Nobility", "href": "https://www.etsy.com/shop/TruNobility" },
       { "icon": "book", "title": "A lesson or resource?", "body": "Download our free lesson plans and teaching materials.", "linkLabel": "Go to Share My Lesson", "href": "https://sharemylesson.com/users/tru-nobility" },
       { "icon": "article", "title": "An article or history post?", "body": "Explore our growing library of original editorial work.", "linkLabel": "Read the latest", "href": "#essays" },
-      { "icon": "people", "title": "Just exploring?", "body": "Learn more about who we are and what we’re building.", "linkLabel": "Start here", "href": "#about" }
+      { "icon": "explore", "title": "Just exploring?", "body": "Learn more about who we are and what we’re building.", "linkLabel": "Start here", "href": "#about" }
     ]
   },
   "freedomStudies": {
@@ -69,8 +69,10 @@
     },
     "quote": "Space is not an escape from life, but a deeper way of living it.",
     "quoteAuthor": "Sun Ra",
-    "image": "/images/sun-ra-feature.png",
-    "imageAlt": "Illustrated portrait of Sun Ra"
+    "image": "/images/sun-ra-cutout-v1.png",
+    "imageAlt": "Sun Ra looking upward in mirrored glasses and an ornate metallic costume",
+    "backgroundImage": "/images/freedom-studies-saturn-v1.webp",
+    "parallaxEnabled": true
   },
   "shop": {
     "title": "Wear the work.",
@@ -82,18 +84,18 @@
     "note": "A curated collection while we build what comes next.",
     "products": [
       {
-        "name": "A More Just Tomorrow",
+        "name": "I Can't Believe What You Say",
         "subtitle": "Tee",
         "image": "/images/product-james-baldwin.jpg",
         "imageAlt": "Black history-inspired T-shirt",
         "href": "https://www.etsy.com/shop/TruNobility"
       },
       {
-        "name": "Black History Is a Love Story",
+        "name": "Black Women Authors",
         "subtitle": "Tee",
         "image": "/images/product-black-women-authors.png",
         "imageAlt": "Black Women Authors T-shirt",
-        "href": "https://www.etsy.com/shop/TruNobility"
+        "href": "https://www.etsy.com/listing/4474726733/black-authors-maya-toni-alice-zora"
       },
       {
         "name": "Sun Ra",
@@ -101,32 +103,25 @@
         "image": "/images/product-sun-ra.jpg",
         "imageAlt": "Black Sun Ra Space Is the Place T-shirt",
         "href": "https://www.etsy.com/shop/TruNobility"
-      },
-      {
-        "name": "Study Support Repeat",
-        "subtitle": "Tee",
-        "image": "/images/placeholder-product-teach-truth.svg",
-        "imageAlt": "Placeholder for the Study Support Repeat T-shirt",
-        "href": "https://www.etsy.com/shop/TruNobility"
       }
     ]
   },
   "featuredResource": {
-    "label": "Free resource",
-    "title": "Take the whole lesson.",
-    "body": "Social posts can introduce an idea. Sometimes you need enough room to actually teach it.",
-    "image": "/images/maya-lesson.png",
+    "label": "OUR MISSION IS GROWING",
+    "title": "Bringing life to our history lessons",
+    "body": "Tru Nobility began by helping people wear the history. Now we’re creating free educational resources that help teachers, families and students study it, question it and carry it forward.",
+    "image": "/images/lesson-plans.png",
     "imageAlt": "Preview pages from a free Tru Nobility classroom resource",
     "points": [
-      "Full lesson plan",
-      "Discussion prompts",
-      "Primary-source material",
-      "Activities",
-      "Reading / viewing recommendations",
-      "Free PDF"
+      "Culturally grounded lesson plans",
+      "Historical context and primary sources",
+      "Activities made for real classrooms",
+      "Questions that invite deeper thinking",
+      "Resources for teachers and families",
+      "Free PDFs to download and share"
     ],
     "cta": {
-      "label": "Download the lesson",
+      "label": "Download Our Lesson Plans",
       "href": "https://trunobility.com/blogs/teaching-resources/maya-angelou-lesson"
     },
     "quote": "Education is a form of freedom."

@@ -378,6 +378,11 @@ h3 {
   opacity: 0.55;
 }
 
+.social-links a[aria-label="Facebook"] svg {
+  width: 15px;
+  height: auto;
+}
+
 .search-link {
   width: 21px;
   height: 21px;
@@ -545,10 +550,15 @@ h3 {
 
 .wayfinding-card__icon {
   height: 48px;
-  display: block;
-  font-family: var(--sans);
-  font-size: 2.4rem;
-  line-height: 1;
+  display: flex;
+  align-items: flex-start;
+  color: var(--orange);
+}
+
+.wayfinding-card__icon svg {
+  width: 34px;
+  height: 34px;
+  fill: currentColor;
 }
 
 .wayfinding-card h3 {
@@ -567,13 +577,26 @@ h3 {
 }
 
 .freedom-feature {
+  position: relative;
+  isolation: isolate;
   color: var(--white);
-  background: var(--night);
+  background: #050505;
   overflow: hidden;
 }
 
+.freedom-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent 40%, rgba(0, 0, 0, 0.35) 68%, rgba(0, 0, 0, 0.5));
+}
+
 .freedom-feature__grid {
-  min-height: 340px;
+  position: relative;
+  z-index: 2;
+  min-height: 390px;
   display: grid;
   grid-template-columns: 27% 25% 31% 17%;
   align-items: stretch;
@@ -604,26 +627,19 @@ h3 {
 }
 
 .freedom-feature__portrait {
-  min-height: 340px;
+  min-height: 390px;
   position: relative;
   overflow: hidden;
-  background: #151915;
-}
-
-.freedom-feature__portrait::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: radial-gradient(circle at 50% 38%, transparent 0 30%, rgba(16, 21, 18, 0.62) 78%);
 }
 
 .freedom-feature__portrait img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 22%;
-  filter: grayscale(1) contrast(1.25) brightness(0.95);
+  object-position: 50% top;
+  filter: grayscale(1);
 }
 
 .freedom-feature__episode {
@@ -654,6 +670,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-shadow: 0 2px 14px #000, 0 1px 3px #000;
 }
 
 .freedom-feature__quote blockquote {
@@ -772,7 +789,6 @@ h3 {
   height: 285px;
   margin-left: calc(var(--gutter) * -1);
   overflow: hidden;
-  background: #d7c8b2;
 }
 
 .featured-resource__visual img {
@@ -1295,6 +1311,11 @@ h3 {
     grid-row: span 2;
   }
 
+  .freedom-feature__portrait img {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
   .freedom-feature__quote {
     padding: 2rem;
     grid-column: 1 / -1;
@@ -1420,6 +1441,7 @@ h3 {
 
   .freedom-feature__portrait {
     height: 330px;
+    min-height: 0;
   }
 
   .product-grid {
