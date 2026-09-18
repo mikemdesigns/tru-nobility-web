@@ -1,5 +1,6 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import BrandMark from "./BrandMark.astro";
 
 interface Social { label: string; key: string; href: string; }
 interface Link { label: string; href: string; }
@@ -16,8 +17,7 @@ const { navigation, socials, copyright, tagline, links } = Astro.props;
 <footer class="site-footer">
   <div class="shell site-footer__top">
     <a class="footer-brand" href="#top" aria-label="Tru Nobility home">
-      <img src="/brand/tru-nobility-editorial-nameplate.svg" alt="Tru Nobility" />
-      <span>Wear the Legacy. Teach the Lesson.</span>
+      <BrandMark compact />
     </a>
     <nav class="footer-nav" aria-label="Footer navigation">
       {navigation.map((link) => <a href={link.href}>{link.label}</a>)}

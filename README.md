@@ -36,6 +36,12 @@ Known direct links are already included for Etsy, Instagram, TikTok, Facebook, t
 
 The revised homepage structure follows the approved mockup: hero, old-site wayfinding, Freedom Studies feature, four-product Etsy strip, featured teaching resource, three-item written archive, platform vision, social follow band, support appeal, and full footer. Every section's copy, links, and image paths remain managed in `src/content/site.json`.
 
+## Icons
+
+The site uses Font Awesome Free SVG icons through the reusable `src/components/Icon.astro` component. Icons are rendered into the static HTML during the Astro build, so the finished page does not load Font Awesome JavaScript in the browser.
+
+Social and follow-card icons can be changed in Pages CMS by selecting a platform key. Supported keys include Instagram, TikTok, YouTube, Facebook, Pinterest, X/Twitter, Threads, LinkedIn, Medium, Etsy, email, and website. To add another icon later, import it and add its key to the `icons` map in `Icon.astro`, then add the same key to the relevant select fields in `.pages.yml`.
+
 ## Replacing images
 
 Temporary editorial assets and existing approved project images are in `public/images/`. The two files most clearly marked for later replacement are:

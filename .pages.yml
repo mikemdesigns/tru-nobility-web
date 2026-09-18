@@ -17,6 +17,40 @@ components:
         type: string
         description: Use a full URL or an on-page anchor such as #shop.
 
+  wayfindingItem:
+    type: object
+    fields:
+      - name: icon
+        label: Icon
+        type: select
+        required: true
+        options:
+          values:
+            - name: shirt
+              label: Shirt
+            - name: book
+              label: Book
+            - name: article
+              label: Article
+            - name: people
+              label: People
+      - name: title
+        label: Card heading
+        type: string
+        required: true
+      - name: body
+        label: Card description
+        type: text
+        required: true
+      - name: linkLabel
+        label: Link text
+        type: string
+        required: true
+      - name: href
+        label: Destination URL
+        type: string
+        description: Use a full URL or an on-page anchor. Leave blank while a destination is pending.
+
   product:
     type: object
     fields:
@@ -94,6 +128,20 @@ components:
               label: Facebook
             - name: pinterest
               label: Pinterest
+            - name: x-twitter
+              label: X / Twitter
+            - name: threads
+              label: Threads
+            - name: linkedin
+              label: LinkedIn
+            - name: medium
+              label: Medium
+            - name: etsy
+              label: Etsy
+            - name: email
+              label: Email
+            - name: website
+              label: Website
       - name: href
         label: Profile URL
         type: string
@@ -118,6 +166,20 @@ components:
               label: Facebook
             - name: pinterest
               label: Pinterest
+            - name: x-twitter
+              label: X / Twitter
+            - name: threads
+              label: Threads
+            - name: linkedin
+              label: LinkedIn
+            - name: medium
+              label: Medium
+            - name: etsy
+              label: Etsy
+            - name: email
+              label: Email
+            - name: website
+              label: Website
       - name: label
         label: Platform name
         type: string
@@ -179,12 +241,6 @@ content:
             label: Introduction
             type: text
             required: true
-          - name: primaryCta
-            label: Primary button
-            component: link
-          - name: secondaryCta
-            label: Secondary button
-            component: link
           - name: image
             label: Hero image
             type: image
@@ -199,6 +255,34 @@ content:
           - name: aside
             label: Image-side statement
             type: string
+
+      - name: wayfinding
+        label: Start here cards
+        type: object
+        fields:
+          - name: title
+            label: Heading
+            type: string
+            required: true
+          - name: intro
+            label: Introduction
+            type: text
+            required: true
+          - name: primaryCta
+            label: Primary button
+            component: link
+          - name: secondaryCta
+            label: Secondary button
+            component: link
+          - name: items
+            label: Destination cards
+            component: wayfindingItem
+            list:
+              min: 1
+              max: 6
+              collapsible:
+                collapsed: true
+                summary: "{title}"
 
       - name: freedomStudies
         label: Freedom Studies feature

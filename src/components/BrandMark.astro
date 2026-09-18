@@ -1,0 +1,16 @@
+---
+interface Props {
+  inverse?: boolean;
+  compact?: boolean;
+}
+
+const { inverse = false, compact = false } = Astro.props;
+---
+
+<span class:list={["brand-mark", { "brand-mark--inverse": inverse, "brand-mark--compact": compact }]}>
+  <img class="brand-mark__crown" src="/brand/tru-nobility-crown-micromark.svg" alt="" aria-hidden="true" />
+  <span class="brand-mark__type">
+    <span class="brand-mark__name">Tru Nobility</span>
+    <span class="brand-mark__tagline">Wear the Legacy. Teach the Lesson.</span>
+  </span>
+</span>

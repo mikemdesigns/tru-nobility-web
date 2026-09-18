@@ -1,0 +1,70 @@
+---
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import {
+  faEtsy,
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faMedium,
+  faPinterestP,
+  faThreads,
+  faTiktok,
+  faXTwitter,
+  faYoutube
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faBookOpen,
+  faEnvelope,
+  faFileLines,
+  faGlobe,
+  faLink,
+  faMagnifyingGlass,
+  faPeopleGroup,
+  faPlay,
+  faShirt
+} from "@fortawesome/free-solid-svg-icons";
+
+interface Props {
+  name: string;
+  title?: string;
+  class?: string;
+}
+
+const { name, title, class: className } = Astro.props;
+
+const icons: Record<string, IconDefinition> = {
+  instagram: faInstagram,
+  tiktok: faTiktok,
+  youtube: faYoutube,
+  facebook: faFacebookF,
+  pinterest: faPinterestP,
+  "x-twitter": faXTwitter,
+  threads: faThreads,
+  linkedin: faLinkedinIn,
+  medium: faMedium,
+  etsy: faEtsy,
+  email: faEnvelope,
+  website: faGlobe,
+  search: faMagnifyingGlass,
+  play: faPlay,
+  shirt: faShirt,
+  book: faBookOpen,
+  article: faFileLines,
+  people: faPeopleGroup
+};
+
+const icon = icons[name] ?? faLink;
+const [width, height, , , rawPathData] = icon.icon;
+const pathData = Array.isArray(rawPathData) ? rawPathData : [rawPathData];
+---
+
+<svg
+  class={className}
+  viewBox={`0 0 ${width} ${height}`}
+  role={title ? "img" : undefined}
+  aria-hidden={title ? undefined : "true"}
+  focusable="false"
+>
+  {title && <title>{title}</title>}
+  {pathData.map((path) => <path d={path}></path>)}
+</svg>

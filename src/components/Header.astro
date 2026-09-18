@@ -1,5 +1,7 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import BrandMark from "./BrandMark.astro";
+import Icon from "./Icon.astro";
 
 interface NavItem { label: string; href: string; }
 interface Social { label: string; key: string; href: string; }
@@ -10,8 +12,7 @@ const { navigation, socials } = Astro.props;
 <header class="site-header">
   <div class="shell header-inner">
     <a class="brand" href="#top" aria-label="Tru Nobility home">
-      <img src="/brand/tru-nobility-editorial-nameplate-inverse.svg" alt="Tru Nobility" />
-      <span>Wear the Legacy. Teach the Lesson.</span>
+      <BrandMark inverse />
     </a>
     <nav aria-label="Primary navigation">
       <ul>
@@ -21,7 +22,7 @@ const { navigation, socials } = Astro.props;
     <div class="header-actions">
       <SocialLinks socials={socials} compact />
       <a class="search-link" href="#essays" aria-label="Search the Tru Nobility archive">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg>
+        <Icon name="search" />
       </a>
     </div>
   </div>

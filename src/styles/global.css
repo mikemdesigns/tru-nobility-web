@@ -235,27 +235,76 @@ h3 {
 }
 
 .brand {
-  width: 235px;
+  width: 250px;
   color: var(--white);
   text-decoration: none;
 }
 
-.brand img {
-  width: 100%;
-  height: 34px;
-  object-fit: contain;
-  object-position: left center;
+.brand-mark {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
 }
 
-.brand span,
-.footer-brand span {
-  display: block;
-  font-family: var(--sans);
-  font-size: 6.5px;
+.brand-mark--inverse {
+  color: var(--white);
+}
+
+.brand-mark__crown {
+  width: 36px;
+  height: 37px;
+  object-fit: contain;
+}
+
+.brand-mark--inverse .brand-mark__crown {
+  filter: invert(1);
+}
+
+.brand-mark__type {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brand-mark__name {
+  font-family: var(--serif);
+  font-size: 1.72rem;
   font-weight: 600;
-  letter-spacing: 0.17em;
-  text-align: center;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+  white-space: nowrap;
+}
+
+.brand-mark__tagline {
+  margin-top: 0.35rem;
+  font-family: var(--sans);
+  font-size: 0.36rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-mark--compact {
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 0.5rem;
+}
+
+.brand-mark--compact .brand-mark__crown {
+  width: 30px;
+  height: 31px;
+}
+
+.brand-mark--compact .brand-mark__name {
+  font-size: 1.35rem;
+}
+
+.brand-mark--compact .brand-mark__tagline {
+  font-size: 0.3rem;
 }
 
 .site-header nav ul {
@@ -320,18 +369,7 @@ h3 {
   width: 100%;
   height: 100%;
   overflow: visible;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-}
-
-.social-links .fill {
   fill: currentColor;
-  stroke: none;
-}
-
-.social-links .play-fill {
-  fill: var(--night);
   stroke: none;
 }
 
@@ -349,9 +387,8 @@ h3 {
 .search-link svg {
   width: 100%;
   height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
+  fill: currentColor;
+  stroke: none;
 }
 
 .hero {
@@ -420,6 +457,10 @@ h3 {
   line-height: 1.28;
 }
 
+.hero__cta-space {
+  min-height: 42px;
+}
+
 .hero__aside {
   width: 170px;
   margin: 0 0 0 auto;
@@ -435,9 +476,28 @@ h3 {
 }
 
 .wayfinding {
-  padding-block: 1.25rem 1.55rem;
+  padding-block: 0 2.25rem;
   background: var(--paper);
-  border-top: 1px solid var(--line);
+}
+
+.wayfinding__panel {
+  position: relative;
+  z-index: 2;
+  margin-top: -1.75rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 48px rgba(33, 31, 27, 0.14);
+}
+
+.wayfinding__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .wayfinding__heading h2 {
@@ -448,24 +508,39 @@ h3 {
 }
 
 .wayfinding__heading p {
-  margin-bottom: 1.1rem;
+  margin-bottom: 0;
   font-size: 0.94rem;
+}
+
+.wayfinding__actions {
+  display: flex;
+  align-items: stretch;
+  gap: 0.75rem;
 }
 
 .wayfinding__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .wayfinding-card {
   min-width: 0;
-  padding: 0 2.1rem;
-  border-left: 1px solid var(--line);
+  padding: 1.2rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
 .wayfinding-card:first-child {
-  padding-left: 0;
-  border-left: 0;
+  padding-left: 1.2rem;
+  border-left: 1px solid var(--line);
+}
+
+.wayfinding-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(202, 65, 20, 0.45);
+  box-shadow: 0 10px 24px rgba(33, 31, 27, 0.08);
 }
 
 .wayfinding-card__icon {
@@ -1029,16 +1104,9 @@ h3 {
 }
 
 .footer-brand {
-  width: 185px;
+  width: 205px;
   color: var(--ink);
   text-decoration: none;
-}
-
-.footer-brand img {
-  width: 100%;
-  height: 34px;
-  object-fit: contain;
-  object-position: left center;
 }
 
 .footer-nav {
@@ -1201,14 +1269,17 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .wayfinding-card {
-    padding: 1.3rem;
-    border-top: 1px solid var(--line);
+  .wayfinding__heading {
+    grid-template-columns: 1fr;
+    align-items: start;
   }
 
-  .wayfinding-card:nth-child(odd) {
-    padding-left: 0;
-    border-left: 0;
+  .wayfinding__actions {
+    flex-wrap: wrap;
+  }
+
+  .wayfinding-card {
+    padding: 1.3rem;
   }
 
   .freedom-feature__grid {
@@ -1324,10 +1395,23 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .wayfinding__panel {
+    margin-top: -1rem;
+    padding: 1rem;
+  }
+
+  .wayfinding__actions {
+    flex-direction: column;
+  }
+
+  .wayfinding__actions .button {
+    width: 100%;
+  }
+
   .wayfinding-card,
   .wayfinding-card:nth-child(odd) {
-    padding: 1.25rem 0;
-    border-left: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--line);
   }
 
   .freedom-feature__grid {

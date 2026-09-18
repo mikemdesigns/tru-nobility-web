@@ -29,20 +29,23 @@ const wayfindingIcons: Record<string, string> = {
             <h1 id="hero-title">{content.hero.headline}</h1>
             <p class="hero__accent">{content.hero.accent}</p>
             <p class="hero__body">{content.hero.body}</p>
-            <div class="button-row">
-              <a class="button button--accent" href={content.hero.primaryCta.href}>{content.hero.primaryCta.label} <span aria-hidden="true">→</span></a>
-              <a class="button button--outline-dark" href={content.hero.secondaryCta.href} target="_blank" rel="noreferrer">{content.hero.secondaryCta.label} <span aria-hidden="true">↗</span></a>
-            </div>
+            <div class="hero__cta-space" aria-hidden="true"></div>
           </div>
           <p class="hero__aside">{content.hero.aside}</p>
         </div>
       </section>
 
       <section id="start-here" class="wayfinding" aria-labelledby="wayfinding-title">
-        <div class="shell">
+        <div class="shell wayfinding__panel">
           <div class="wayfinding__heading">
-            <h2 id="wayfinding-title">{content.wayfinding.title}</h2>
-            <p>{content.wayfinding.intro}</p>
+            <div>
+              <h2 id="wayfinding-title">{content.wayfinding.title}</h2>
+              <p>{content.wayfinding.intro}</p>
+            </div>
+            <div class="wayfinding__actions">
+              <a class="button button--accent" href={content.wayfinding.primaryCta.href}>{content.wayfinding.primaryCta.label} <span aria-hidden="true">→</span></a>
+              <a class="button button--outline-dark" href={content.wayfinding.secondaryCta.href} target="_blank" rel="noreferrer">{content.wayfinding.secondaryCta.label} <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
           <div class="wayfinding__grid">
             {content.wayfinding.items.map((item) => (
