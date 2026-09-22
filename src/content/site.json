@@ -262,7 +262,8 @@
     "title": "If this gave you something, help us make the next one.",
     "body": "Tru Nobility’s educational work takes research, writing, recording, design and production. If you’ve learned something here—or used one of our resources—you can help us keep building them.",
     "cta": {
-      "label": "Support the work"
+      "label": "Support the work",
+      "href": "https://buy.stripe.com/3cI7sN3Cldyb75q2w9eUU00"
     },
     "image": "/images/founders-temporary.png",
     "imageAlt": "The founders of Tru Nobility",
