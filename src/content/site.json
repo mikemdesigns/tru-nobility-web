@@ -167,6 +167,17 @@
     },
     "items": [
       {
+        "publication": "Published in HuffPost",
+        "meta": "Oct 30, 2026 · HuffPost Personal",
+        "title": "The Scam Behind The Robe",
+        "summary": "A childhood photograph becomes the starting point for examining how the Ku Klux Klan manufactured an image of unstoppable power—and what its records reveal beneath the spectacle.",
+        "linkLabel": "Read on HuffPost",
+        "href": "https://www.huffpost.com/entry/photo-tree-house-ku-klux-klan_n_6aa725c7e4b0781f9692f4ea",
+        "image": "/images/article-huffpost-scam-behind-the-robe.webp",
+        "imageAlt": "Michael Martin holding the childhood photograph at the center of his HuffPost essay",
+        "imageCredit": "Image via HuffPost"
+      },
+      {
         "meta": "Jul 4, 2026 · 10 min read",
         "title": "What July 4th Feels Like When You Know Too Much",
         "summary": "A personal examination of national myth, public ritual and what freedom means when the celebration and the history do not agree.",

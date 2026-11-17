@@ -131,7 +131,9 @@ import content from "../content/site.json";
               <article class="article-card">
                 <div class="article-card__image">
                   <img src={article.image} alt={article.imageAlt} loading="lazy" />
+                  {article.imageCredit && <span class="article-card__credit">{article.imageCredit}</span>}
                 </div>
+                {article.publication && <p class="article-card__publication">{article.publication}</p>}
                 <p class="article-card__meta">{article.meta}</p>
                 <h3>{article.title}</h3>
                 <p>{article.summary}</p>

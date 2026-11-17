@@ -897,6 +897,7 @@ h3 {
 .article-card__image {
   height: 118px;
   margin-bottom: 0.55rem;
+  position: relative;
   overflow: hidden;
   background: #cdbb9d;
 }
@@ -906,6 +907,33 @@ h3 {
   height: 100%;
   object-fit: cover;
   filter: saturate(0.86) contrast(1.03);
+}
+
+.article-card__credit {
+  padding: 0.22rem 0.36rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: var(--white);
+  background: rgba(16, 21, 18, 0.78);
+  font-family: var(--sans);
+  font-size: 0.48rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.article-card__publication {
+  width: fit-content;
+  margin-bottom: 0.45rem;
+  padding: 0.28rem 0.4rem 0.22rem;
+  color: var(--white);
+  background: var(--night);
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .article-card__meta {
